@@ -1,0 +1,36 @@
+.two-panel-container {
+  display: grid;
+  grid-template-columns: 48% 4% 48%;
+  height: auto;
+  padding-bottom: 1rem;
+
+  .two-panel__left {
+    grid-column-start: 1;
+  }
+
+  .two-panel__right {
+    grid-column-start: 3;
+  }
+}
+
+.panel-text {
+  line-height: 1.8;
+  padding-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 1280px) {
+  .panel-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .two-panel-container {
+     grid-template-columns: 100%;
+  }
+
+  div:nth-child(2) {
+    grid-column-start: 1;
+  }
+}

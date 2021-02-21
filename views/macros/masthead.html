@@ -1,0 +1,23 @@
+{% import "apostrophe-templates:macros/image.html" as image %}
+
+{% macro render(page, options={}) %}
+<div class="period-masthead">
+  <div class="page-title text-white">{{ __(page.title) }}</div>
+  <div class="masthead-image {% if options.color %}masthead-image--{{options.color}}{% endif %} {% if options.type === 'article' %}masthead-image--article{% endif %}">
+    {% if (options.media) and (page.thumbnail) %}
+      {% set thumbnail = apos.images.first(page.thumbnail) %}
+      {{ image.render(thumbnail, {alt: page.title}) }}
+    {% else %}
+      {{ apos.singleton(page, 'periodPageImage', 'apostrophe-images', {
+        minSize: [ 700, 350 ],
+        aspectRatio: [ 2, 1 ],
+        limit: 1,
+        size: 'full'
+      }) }}
+    {% endif %}
+  </div>
+  {% if options.type === 'article' %}
+    <div class="title-cover {% if options.color %}masthead-image--{{options.color}}{% endif %}"></div>
+  {% endif %}
+</div>
+{% endmacro %}

@@ -1,0 +1,209 @@
+.periods-container {
+  display: grid;
+  grid-auto-rows: 1fr;
+}
+
+.period-link .period-card {
+  width: 100%;
+  height: calc(98vh/6.6);
+  margin-bottom: 12px;
+}
+
+.text-background {
+  position: absolute;
+  width: 28%;
+  height: calc(98vh/6.6);
+  transform: skew(-15deg);
+  margin-left: -24px;
+  z-index: 30;
+}
+
+.white-stripe {
+  position: absolute;
+  width: 30%;
+  height: calc(98vh/6.5);
+  background-color: white;
+  transform: skew(-15deg);
+  margin-left: -24px;
+  z-index: 10;
+}
+
+.period-text {
+  font-family: 'YesevaOne_Regular';
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  z-index: 30;
+  width: 340px;
+}
+
+.period-link:nth-of-type(2n) .period-card {
+  .text-background, .white-stripe {
+    transform: skew(15deg);
+  }
+}
+
+#period-1 .text-background {
+  background-color: @coral;
+}
+
+#period-1 .period-text {
+  color: darken(@coral, 40%);
+}
+
+#period-2 .text-background {
+  background-color: #97a97f;
+}
+
+#period-2 .period-text {
+  color: darken(#97a97f, 30%);
+}
+
+#period-3 .text-background {
+  background-color: lighten(@indigo, 20%);
+}
+
+#period-3 .period-text {
+  color: darken(@indigo, 20%);
+}
+
+#period-4 .text-background {
+  background-color: darken(@coral, 5%);
+}
+
+#period-4 .period-text {
+  color: darken(@coral, 42%);
+}
+
+#period-5 .text-background {
+  background-color: lighten(@cyan, 10%);
+}
+
+#period-5 .period-text {
+  color: darken(@cyan, 32%);
+}
+
+#period-6 .text-background {
+  background-color: @gold;
+}
+
+#period-6 .period-text {
+  color: darken(@gold, 35%);
+}
+
+#period-1 {
+  background: url('/images/menu/antichitate.png') no-repeat center/100%;
+}
+
+#period-2 {
+  background: url('/images/menu/middle-ages.jpg') no-repeat center/100%;
+}
+
+#period-3 {
+  background: url('/images/menu/otoman.jpg') no-repeat center/100%;
+}
+
+#period-4 {
+  background: url('/images/menu/habsburgic.png') no-repeat center/100%;
+}
+
+#period-5 {
+  background: url('/images/menu/ww.png') no-repeat 180px 30%;
+}
+
+#period-6 {
+  background: url('/images/menu/modern.png') no-repeat center/100%;
+}
+
+@media(max-width: 1280px) {
+  .period-card {
+    .text-background {
+      width: 34%;
+    }
+
+    .white-stripe {
+      width: 36%;
+    }
+
+    .period-text {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+@media(max-width: 960px) {
+  .period-card {
+    .period-text {
+      font-size: 1.4rem;
+      width: 250px;
+    }
+  }
+}
+
+@media(max-width: 768px) {
+  .periods-container {
+    padding: 0 1rem 0 1rem;
+  }
+
+  .period-card {
+    height: calc(63vh/6.7);
+
+    .text-background {
+      height: calc(63vh/6.7);
+      margin-left: -20px;
+      width: 53%;
+    }
+
+    .white-stripe {
+      height: calc(63vh/6.6);
+      width: 56%;
+    }
+
+    .period-text {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+@media(max-width: 600px) {
+  .periods-container {
+    padding: 0 0.5rem 0 2.2rem;
+  }
+
+  .period-card {
+    height: calc(60vh/6.7);
+    .text-background {
+      height: calc(60vh/6.7);
+      width: 63%;
+    }
+
+    .white-stripe {
+      height: calc(60vh/6.6);
+      width: 67%;
+    }
+
+    .period-text {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media(max-width: 400px) {
+  .period-card {
+    height: calc(60vh/6.7);
+    .text-background {
+      height: calc(60vh/6.7);
+      width: 86%;
+    }
+
+    .white-stripe {
+      height: calc(60vh/6.6);
+      width: 90%;
+    }
+
+    .period-text {
+      font-size: 1.1rem;
+      width: 250px;
+    }
+  }
+}

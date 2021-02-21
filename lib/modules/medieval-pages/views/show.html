@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+{% import 'macros/masthead.html' as masthead %}
+{% set piece = data.piece %}
+
+{% block main %}
+  {{ masthead.render(data.piece, { media: true, page: data.page, type: 'article' }) }}
+  <div class="o-container o-container--large c-article-page">
+    My article
+  </div>
+{% endblock %}

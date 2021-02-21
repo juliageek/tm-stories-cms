@@ -1,0 +1,16 @@
+{% set w = data.widget %}
+{% if w.config %}
+  {% set config = w.config %}
+{% endif %}
+
+{% set leftPanelSchema = apos.helpers._find(data.manager.schema, { name: 'leftPanel' }) %}
+{% set rightPanelSchema = apos.helpers._find(data.manager.schema, { name: 'rightPanel' }) %}
+
+<div class="two-panel-container {{ config }} ts-px-1">
+  <div class="two-panel__left flex flex-column justify-center">
+    {{ apos.area(w, 'leftPanel', leftPanelSchema.options) }}
+  </div>
+  <div class="two-panel__right flex flex-column justify-center">
+    {{ apos.area(w, 'rightPanel', rightPanelSchema.options) }}
+  </div>
+</div>

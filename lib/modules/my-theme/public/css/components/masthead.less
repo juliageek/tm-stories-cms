@@ -1,0 +1,54 @@
+.masthead-image {
+  height: 36vh;
+  z-index: 0;
+
+  &--coral {
+    background-color: @coral;
+  }
+}
+
+[data-dot-path="periodPageImage"] {
+  height: 36vh !important;
+}
+
+.page-title {
+  font-family: 'YesevaOne-Regular', 'Tahoma', sans-serif;
+  position: absolute;
+  top: calc(~"36vh * 0.5 - 3 * 16px");
+  left: 10%;
+  z-index: 10;
+  font-size: 7rem;
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+
+.masthead-image--article {
+  width: 100%;
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 36vh;
+  }
+}
+
+.title-cover {
+  z-index: 5;
+  width: 32%;
+  position: absolute;
+  top: 0;
+  left: 10%;
+  transform: skew(-15deg);
+  height: 36vh;
+  opacity: 70%;
+
+  &--coral {
+    background-color: @coral;
+  }
+}
+
+@media (max-width: 1800px) {
+  .page-title {
+    font-size: 5rem;
+  }
+}
+

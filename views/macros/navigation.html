@@ -1,0 +1,46 @@
+{% macro render(home, currentPage) %}
+{% import 'macros/language-picker.html' as languagePicker %}
+{% import 'macros/periods.html' as periods %}
+{% import 'macros/svgs.html' as svgs %}
+
+<div class="menu">
+  <div class="utilities flex align-start flex-column">
+    <div class="left-side">
+      <div class="useful-links medium-text flex align-start space-between">
+        <a class="link pointer" href="/about">{{__('About')}}</a>
+        <a class="link pointer" href="/photos">{{__('Photos')}}</a>
+      </div>
+      <div class="medium-text email pointer">
+         <a href="mailto:povestiri@tmstories.ro">
+           povestiri@tmstories.ro
+         </a>
+      </div>
+    </div>
+    <div class="right-side">
+      <div class="social-media-links">
+        <a
+          href="https://www.facebook.com/Povestirile-Timi%C8%99oarei-TmStories-103965398155024"
+          id="facebook"
+          target="_blank"
+        >
+          {{ svgs.facebook() }}
+        </a>
+        <a href="https://www.instagram.com/povestirile_timisoarei" target="_blank">
+          {{ svgs.instagram() }}
+        </a>
+      </div>
+      <div class="language-select">
+        {{ languagePicker.render() }}
+      </div>
+    </div>
+  </div>
+  {{ periods.render() }}
+  <div class="cjt flex align-center justify-end">
+    <div class="cjt-logo mr-1"></div>
+    <div class="cjt-text">
+      <div>{{ __('financed') }}</div>
+      <div class="uppercase">{{ __('cjt') }}</div>
+    </div>
+  </div>
+</div>
+{% endmacro %}

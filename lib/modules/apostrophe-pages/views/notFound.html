@@ -1,0 +1,14 @@
+{#
+  Use this template to build out your 404 error pages. Like page templates,
+  it inherits a global layout.
+#}
+
+{% extends "layout.html" %}
+
+{% block title %}404 - Page not found{% endblock %}
+
+{% block main %}
+  <div class="error-container flex align-center justify-center highlight-text text-white">
+    {{ __('error404') }}
+  </div>
+{% endblock %}

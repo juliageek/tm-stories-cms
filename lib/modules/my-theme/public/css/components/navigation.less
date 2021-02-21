@@ -1,0 +1,189 @@
+.menu {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.5rem 400px 20% auto;
+  grid-template-rows: 10% 50% auto 10%;
+}
+
+.utilities {
+  padding: 2.2rem 0 0 2rem;
+  grid-row-start: 2;
+  grid-column-start: 2;
+}
+
+.periods-container {
+  grid-row-start: 1;
+  grid-column-start: 4;
+  grid-row-end: 3;
+  margin-top: 12px;
+}
+
+.useful-links, .email, .social-media-links, .language-select {
+  margin-bottom: 2rem;
+}
+
+.link {
+  padding-right: 1.5rem;
+
+  &:last-of-type {
+    padding-right: 0;
+  }
+}
+
+.email:hover {
+  color: @coral;
+}
+
+#facebook {
+  padding-right: 1.5rem;
+}
+
+.cjt {
+  position: absolute;
+  bottom: 2rem;
+  left: 3rem;
+  grid-row-start: 4;
+}
+
+.cjt-text {
+  font-size: 1rem;
+  width: 15rem;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+.cjt-logo {
+  background: url('/images/menu/cjt.jpg') no-repeat top/cover;
+  width: 2.4rem;
+  height: 2.8rem;
+}
+
+@media(max-width: 1280px) {
+  .menu {
+    grid-template-columns: 1.5rem 350px 5% auto;
+    grid-template-rows: 10% auto 10%;
+  }
+}
+
+@media (max-width: 960px) {
+  .menu {
+    grid-template-columns: 1.5rem 325px 5% auto;
+  }
+
+  .utilities {
+    padding: 1rem 0.5rem 0 1rem;
+  }
+
+  .cjt {
+    left: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cjt {
+    bottom: 1rem;
+    left: 2rem;
+  }
+
+  .utilities {
+    padding: 1rem 1rem 0 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .left-side {
+      width: 62%;
+    }
+
+    .right-side {
+      width: 38%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+  }
+
+  .useful-links, .email, .social-media-links, .language-select {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .language-select {
+    margin-right: 14px;
+  }
+
+  .email {
+    line-height: 32px;
+  }
+
+  .menu {
+    grid-template-columns: 1.5rem auto;
+    grid-template-rows: 10% 20% 50% 10%;
+  }
+
+  .periods-container {
+    grid-row-start: 3;
+    grid-column-start: 2;
+  }
+}
+
+@media (max-width: 500px) {
+  #facebook {
+    padding-right: 1.1rem;
+  }
+
+  .menu {
+    grid-template-columns: 0.5rem auto 0.5rem;
+    grid-template-rows: 10% 15% 55% 10%;
+  }
+
+  .cjt {
+    left: 1rem;
+  }
+
+  .utilities {
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 0 1rem;
+
+    .left-side {
+      width: 100%;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    .right-side {
+      width: 100%;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+  }
+
+  .link, .email, .language-select {
+    font-size: 1rem;
+  }
+
+  .language-select {
+    position: absolute;
+    top: 1.3rem;
+    right: 1rem;
+  }
+
+  .email {
+    line-height: 1;
+  }
+
+  .useful-links, .email, .social-media-links {
+    margin-bottom: 1rem;
+  }
+
+  .link {
+    padding-right: 1.1rem;
+  }
+
+  .cjt-text {
+    font-size: 0.8rem;
+  }
+}
