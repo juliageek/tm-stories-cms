@@ -1,5 +1,5 @@
 {% macro render(page) %}
-  <ul class="breadcrumbs-navigation flex ts-pb-2">
+  <ul class="breadcrumbs-navigation flex">
     {% for ancestor in page._ancestors %}
       <li class="breadcrumbs-item">
         <a class="breadcrumbs-link" href="{{ ancestor._url }}">{{ ancestor.title }}</a>  /

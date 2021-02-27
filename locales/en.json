@@ -1,14 +1,15 @@
 {
-  "error404": "error404",
-  "About": "About",
-  "Photos": "Photos",
-  "Antiquity": "Antiquity",
-  "Medieval": "Medieval",
-  "Otoman": "Otoman",
-  "Austro-Habsburg": "Austro-Habsburg",
-  "World Wars": "World Wars",
-  "Modern": "Modern",
-  "financed": "financed",
-  "cjt": "cjt",
-  "Home_Title": "Home_Title"
+	"error404": "Oops! Looks like the page you'\re looking for doesn'\t exist!",
+	"About": "About",
+	"Photos": "Photo gallery",
+	"Antiquity": "Antiquity",
+	"Medieval": "The Middle Ages",
+	"Otoman": "The Ottoman Rule",
+	"Austro-Habsburg": "Habsburgic and Austro-Haungarian Period",
+	"World Wars": "World Wars Period",
+	"Modern": "Modern Timişoara",
+	"financed": "This project was financed by",
+	"cjt": "Timiş County Council",
+	"Home_Title": "The Tales of Timişoara",
+	"Server error, please try again.": "Server error, please try again."
 }

@@ -1,14 +1,14 @@
 {
-  "error404": "error404",
-  "About": "About",
-  "World Wars": "World Wars",
-  "Medieval": "Medieval",
-  "Austro-Habsburg": "Austro-Habsburg",
-  "Antiquity": "Antiquity",
-  "Photos": "Photos",
-  "financed": "financed",
-  "Otoman": "Otoman",
-  "Modern": "Modern",
-  "Home_Title": "Home_Title",
-  "cjt": "cjt"
+  "error404": "Oops! Se pare că pagina pe care o cauţi nu există!",
+  "About": "Despre",
+  "World Wars": "Perioada războaielor mondiale",
+  "Medieval": "Evul Mediu",
+  "Austro-Habsburg": "Perioada habsburgică şi austro-ungară",
+  "Antiquity": "Antichitate",
+  "Photos": "Galerie foto",
+  "financed": "Proiect finanţat de",
+  "Otoman": "Perioada otomană",
+  "Modern": "Timişoara modernă",
+  "Home_Title": "Povestrile Timişoarei",
+  "cjt": "Consiliul Judeţean Timiş"
 }

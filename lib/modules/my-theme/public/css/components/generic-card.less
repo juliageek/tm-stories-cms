@@ -1,0 +1,32 @@
+.generic-card {
+   height: 350px;
+   width: auto;
+   background-color: #EAEAEA;
+   border-radius: 5px;
+
+
+   .generic-card-content {
+     padding: 0 0.75rem;
+   }
+
+   .generic-card-image img {
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+   }
+
+   &:hover {
+     background-color: #D5D5D5;
+     .generic-card-image {
+        opacity: 0.8;
+     }
+   }
+}
+
+@media (max-width: 768px) {
+  .generic-card {
+    height: 325px;
+  }
+}

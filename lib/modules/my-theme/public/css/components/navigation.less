@@ -1,6 +1,6 @@
 .menu {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   overflow: hidden;
   display: grid;
   grid-template-columns: 1.5rem 400px 20% auto;
@@ -11,13 +11,14 @@
   padding: 2.2rem 0 0 2rem;
   grid-row-start: 2;
   grid-column-start: 2;
+  flex-direction: column;
+  z-index: 500;
 }
 
 .periods-container {
   grid-row-start: 1;
   grid-column-start: 4;
   grid-row-end: 3;
-  margin-top: 12px;
 }
 
 .useful-links, .email, .social-media-links, .language-select {
@@ -42,7 +43,7 @@
 
 .cjt {
   position: absolute;
-  bottom: 2rem;
+  bottom: 4rem;
   left: 3rem;
   grid-row-start: 4;
 }
@@ -83,7 +84,6 @@
 
 @media (max-width: 768px) {
   .cjt {
-    bottom: 1rem;
     left: 2rem;
   }
 
@@ -100,27 +100,31 @@
       width: 38%;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
+      align-items: flex-end;
+      justify-content: flex-end;
     }
   }
 
   .useful-links, .email, .social-media-links, .language-select {
     margin-top: 0;
+    font-size: 1rem;
+  }
+
+  .useful-links, .email, .language-select {
     margin-bottom: 1rem;
   }
 
-  .language-select {
-    margin-right: 14px;
+  .social-media-links {
+    margin-bottom: 0.9rem;
   }
 
   .email {
-    line-height: 32px;
+    line-height: 42px;
   }
 
   .menu {
     grid-template-columns: 1.5rem auto;
-    grid-template-rows: 10% 20% 50% 10%;
+    grid-template-rows: 5% 15% 1fr 1fr;
   }
 
   .periods-container {
@@ -136,7 +140,7 @@
 
   .menu {
     grid-template-columns: 0.5rem auto 0.5rem;
-    grid-template-rows: 10% 15% 55% 10%;
+    grid-template-rows: 5% 20% 55% auto;
   }
 
   .cjt {
@@ -146,7 +150,7 @@
   .utilities {
     justify-content: flex-start;
     flex-direction: column;
-    padding: 0 1rem;
+    padding: 0 1rem 0 0.75rem;
 
     .left-side {
       width: 100%;
@@ -161,29 +165,19 @@
     }
   }
 
-  .link, .email, .language-select {
-    font-size: 1rem;
-  }
-
-  .language-select {
-    position: absolute;
-    top: 1.3rem;
-    right: 1rem;
-  }
-
   .email {
     line-height: 1;
   }
 
-  .useful-links, .email, .social-media-links {
-    margin-bottom: 1rem;
+  .language-select {
+    margin-bottom: 0;
   }
 
   .link {
     padding-right: 1.1rem;
   }
 
-  .cjt-text {
-    font-size: 0.8rem;
+  .link, .email, .social-media-links, .language-select, .cjt-text {
+    font-size: 0.9rem;
   }
 }

@@ -1,5 +1,5 @@
 {% macro render(imageObj, options= {size: 'full', alt: false, description: false} ) %}
-  <div class="o-image__wrapper{% if options.class %} {{ options.class }}{% endif %}">
+  <div class="image-wrapper{% if options.class %} {{ options.class }}{% endif %}">
     {% if imageObj === undefined %}
       <img class="o-image" src="https://via.placeholder.com/300x200" alt="{{ options.alt }}">
     {% else %}

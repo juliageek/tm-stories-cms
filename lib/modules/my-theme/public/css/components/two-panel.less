@@ -11,6 +11,12 @@
   .two-panel__right {
     grid-column-start: 3;
   }
+
+  .attachment-image {
+    background-size: cover;
+    max-width: 100%;
+    height: 50vh;
+  }
 }
 
 .panel-text {
@@ -28,9 +34,9 @@
 @media (max-width: 768px) {
   .two-panel-container {
      grid-template-columns: 100%;
-  }
 
-  div:nth-child(2) {
-    grid-column-start: 1;
+     .two-panel__left, .two-panel__right {
+       grid-column-start: 1;
+     }
   }
 }

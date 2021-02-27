@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% import 'macros/masthead.html' as masthead %}
+{% set page = data.page %}
+
+{% block main %}
+{{ masthead.render(page, {
+    media: true,
+    page: data.page,
+    type: 'photos',
+    color: 'dark-gold'
+}) }}
+<div class="photos ts-container">
+  {{ apos.singleton(page, 'photoGallery', 'apostrophe-images', {
+    minSize: [ 700, 350 ],
+    aspectRatio: [ 2, 1 ],
+    limit: 100,
+    size: 'full',
+    grid: true
+  }) }}
+</div>
+{% endblock %}

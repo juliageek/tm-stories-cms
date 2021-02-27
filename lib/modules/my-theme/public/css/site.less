@@ -1,13 +1,17 @@
 @import 'components/error-404.less';
 
+@import 'components/about.less';
 @import 'components/article.less';
+@import 'components/article-page.less';
 @import 'components/breadcrumbs.less';
+@import 'components/generic-card.less';
 @import 'components/hamburger-menu.less';
 @import 'components/home.less';
-@import 'components/language_picker.less';
+@import 'components/language-picker.less';
 @import 'components/masthead.less';
 @import 'components/navigation.less';
 @import 'components/periods.less';
+@import 'components/photos.less';
 @import 'components/two-panel.less';
 
 @import 'generic/_colors.less';
@@ -23,10 +27,15 @@
   bottom: 0 !important;
 }
 
+.apos-refreshable {
+    overflow-x: hidden;
+}
+
 body {
   margin: 0 !important;
   font-size: 16px;
   font-family: 'OpenSans-Regular', sans-serif;
+  box-sizing: border-box;
 }
 
 .main-content {
@@ -39,7 +48,7 @@ body {
 
 #page-menu {
   top: -480px;
-  height: 100vh;
+  height: 105vh;
   width: 100vw;
   position: absolute;
   display: flex;
@@ -51,10 +60,11 @@ body {
   transition: all 0.6s ease-in-out;
   transform: scaleY(0) translateY(-480px);
   z-index: 460;
+  overflow: hidden;
 }
 
 #page-menu.open {
-  height: 100vh;
+  height: 105vh;
   width: 100vw;
   z-index: 460;
   display: flex;
@@ -62,10 +72,104 @@ body {
   justify-content: center;
   transform: scaleY(1) translateY(0);
   top: 0;
+  overflow: hidden;
 }
 
 .apos-area.apos-empty {
   background-color: transparent !important;
+}
+
+body.scroll-disabled {
+  overflow: hidden;
+}
+
+.animate__animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate__slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft;
+}
+
+.apos-area .apos-slideshow-button {
+  position: relative !important;
+  top: 0;
+
+  i {
+    top: 0 important;
+    color: @black;
+  }
+}
+
+.apos-area .apos-slideshow-button.apos-slideshow-prev {
+  left: 0;
+}
+
+.apos-area .apos-slideshow-button.apos-slideshow-next {
+  right: 0;
+}
+
+.apos-slideshow.apos-slideshow-grid {
+  display: grid;
+  grid-template-columns: 50px auto 50px;
+  grid-template-rows: 100%;
+
+  #arrow-left {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    z-index: 500;
+  }
+
+  .nav-arrow a {
+    height: 100%;
+    width: 100%;
+  }
+
+  .image-container {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+  }
+
+  .icon-wrapper {
+    height: inherit;
+    width: 100%;
+    background-color: white;
+    opacity: 0.7;
+  }
+
+  #arrow-right {
+    grid-column-start: 3;
+    grid-row-start: 1;
+    z-index: 500;
+  }
+
+  .apos-slideshow-button {
+    transform: translateY(0);
+  }
+
+  .apos-slideshow-item {
+    background-size: cover;
+  }
 }
 
 @media (max-width: 960px) {

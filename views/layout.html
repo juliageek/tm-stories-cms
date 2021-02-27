@@ -55,8 +55,11 @@
     </a>
   </div>
   <div id="page-menu">
-    {{ navigation.render(data.home, data.page)
-    }}
+    {% if data.piece %}
+      {{ navigation.render(data.home, data.piece)}}
+    {% else %}
+      {{ navigation.render(data.home, data.page)}}
+    {% endif %}
   </div>
   {% if not data.user %}
      <a class="login-link" href="/login">Login</a>

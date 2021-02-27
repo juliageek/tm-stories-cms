@@ -3,7 +3,7 @@
   grid-auto-rows: 1fr;
 }
 
-.period-link .period-card {
+.period-card {
   width: 100%;
   height: calc(98vh/6.6);
   margin-bottom: 12px;
@@ -29,12 +29,11 @@
 }
 
 .period-text {
-  font-family: 'YesevaOne_Regular';
   font-size: 2rem;
   font-weight: 600;
   letter-spacing: 1.2px;
   z-index: 30;
-  width: 340px;
+  width: 380px;
 }
 
 .period-link:nth-of-type(2n) .period-card {
@@ -115,7 +114,69 @@
   background: url('/images/menu/modern.png') no-repeat center/100%;
 }
 
-@media(max-width: 1280px) {
+.period-link:hover {
+  #period-1 .text-background {
+    background-color: darken(@coral, 10%);
+  }
+
+  #period-1 {
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('/images/menu/antichitate.png') no-repeat center/100%;
+  }
+
+  #period-2 .text-background {
+    background-color: darken(#97a97f, 20%);
+  }
+
+  #period-2 .period-text {
+    color: darken(#97a97f, 40%);
+  }
+
+  #period-2 {
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('/images/menu/middle-ages.jpg') no-repeat center/100%;
+  }
+
+  #period-3 .text-background {
+    background-color: lighten(@indigo, 10%);
+  }
+
+  #period-3 {
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('/images/menu/otoman.jpg') no-repeat center/100%;
+  }
+
+  #period-4 .text-background {
+    background-color: darken(@coral, 15%);
+  }
+
+  #period-4 {
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('/images/menu/habsburgic.png') no-repeat center/100%;
+  }
+
+  #period-5 .text-background {
+    background-color: darken(@cyan, 5%);
+  }
+
+  #period-5 {
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('/images/menu/ww.png') no-repeat 180px 30%;
+  }
+
+  #period-6 .text-background {
+    background-color: darken(@gold, 10%);
+  }
+
+  #period-6 {
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), url('/images/menu/modern.png') no-repeat center/100%;
+  }
+}
+
+@media (max-width: 1800px) {
+  .period-card {
+    .period-text {
+       font-size: 1.6rem;
+    }
+  }
+}
+
+@media (max-width: 1280px) {
   .period-card {
     .text-background {
       width: 34%;
@@ -126,36 +187,37 @@
     }
 
     .period-text {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
+      width: 340px;
     }
   }
 }
 
-@media(max-width: 960px) {
+@media (max-width: 960px) {
   .period-card {
     .period-text {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       width: 250px;
     }
   }
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   .periods-container {
     padding: 0 1rem 0 1rem;
   }
 
-  .period-card {
-    height: calc(63vh/6.7);
+  .period-link .period-card {
+    height: calc(60vh/6.7);
 
     .text-background {
-      height: calc(63vh/6.7);
+      height: calc(60vh/6.7);
       margin-left: -20px;
       width: 53%;
     }
 
     .white-stripe {
-      height: calc(63vh/6.6);
+      height: calc(60vh/6.5);
       width: 56%;
     }
 
@@ -165,20 +227,17 @@
   }
 }
 
-@media(max-width: 600px) {
+@media (max-width: 600px) {
   .periods-container {
-    padding: 0 0.5rem 0 2.2rem;
+    padding: 0 0.5rem 0 0.5rem;
   }
 
-  .period-card {
-    height: calc(60vh/6.7);
+  .period-link .period-card {
     .text-background {
-      height: calc(60vh/6.7);
       width: 63%;
     }
 
     .white-stripe {
-      height: calc(60vh/6.6);
       width: 67%;
     }
 
@@ -188,16 +247,19 @@
   }
 }
 
-@media(max-width: 400px) {
-  .period-card {
-    height: calc(60vh/6.7);
+@media (max-width: 500px) {
+  .periods-container {
+    padding: 0 0.5rem 0 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .period-link .period-card {
     .text-background {
-      height: calc(60vh/6.7);
       width: 86%;
     }
 
     .white-stripe {
-      height: calc(60vh/6.6);
       width: 90%;
     }
 

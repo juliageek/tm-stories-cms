@@ -1,16 +1,17 @@
-{% macro render(home, currentPage) %}
+{% macro render(home, el) %}
 {% import 'macros/language-picker.html' as languagePicker %}
 {% import 'macros/periods.html' as periods %}
 {% import 'macros/svgs.html' as svgs %}
 
+{% set lang = apos.workflow.lang() %}
 <div class="menu">
-  <div class="utilities flex align-start flex-column">
+  <div class="utilities flex align-start">
     <div class="left-side">
-      <div class="useful-links medium-text flex align-start space-between">
-        <a class="link pointer" href="/about">{{__('About')}}</a>
-        <a class="link pointer" href="/photos">{{__('Photos')}}</a>
+      <div class="useful-links flex align-start space-between">
+        <a class="link pointer" href="{{ '/' + lang + '/about' }}">{{__('About')}}</a>
+        <a class="link pointer" href="{{ '/' + lang + '/photos' }}">{{__('Photos')}}</a>
       </div>
-      <div class="medium-text email pointer">
+      <div class="email pointer">
          <a href="mailto:povestiri@tmstories.ro">
            povestiri@tmstories.ro
          </a>
@@ -30,13 +31,13 @@
         </a>
       </div>
       <div class="language-select">
-        {{ languagePicker.render() }}
+        {{ languagePicker.render(el) }}
       </div>
     </div>
   </div>
   {{ periods.render() }}
   <div class="cjt flex align-center justify-end">
-    <div class="cjt-logo mr-1"></div>
+    <div class="cjt-logo ts-mr-1"></div>
     <div class="cjt-text">
       <div>{{ __('financed') }}</div>
       <div class="uppercase">{{ __('cjt') }}</div>

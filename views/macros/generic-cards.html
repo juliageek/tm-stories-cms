@@ -1,39 +1,45 @@
 {% import 'macros/image.html' as image %}
 
 {% macro card(piece, options) %}
-  <div class="o-card c-generic-card">
-    <div class="o-card__media c-generic-card__media">
-      <a href="{{ piece._url }}">
+  <a href="{{ piece._url }}">
+    <div class="generic-card">
+      <div class="generic-card-image">
         {% set thumbnail = apos.images.first(piece.thumbnail) %}
         {{ image.render(thumbnail, { alt: piece.title }) }}
-      </a>
-    </div>
-    <div class="o-card__content c-generic-card__content">
-      {% if options.schema %}
-        {% for item in options.schema %}
-          {% if item === 'title' %}
-            <a href="{{ piece._url }}" class="o-body o-card__info c-generic-card__title"><strong>{{ piece.title }}</strong></a>
-          {% elif item === 'startDate' or item === 'publishedAt' %}
-            <span class="o-card__info">{{ piece[item] | date('MMMM Do YYYY') }}</span>
-          {% elif item === 'tags' %}
-            <ul class="o-tag-list">
-              {% for tag in piece.tags %}
-                <li><a class="o-tag" href="{{ options.tagsUrl if options.tagsUrl }}?tags={{ tag }}">{{ tag }}</a></li>
-              {% endfor %}
-            </ul>
-          {% elif apos.helpers._isObject(item) %}
-            {% if piece[item.field] %}
-              <span class="o-card__info{% if item.class %} {{ item.class }}{% endif %}">{{ item.label if item.label }}{{ piece[item.field] }}</span>
+      </div>
+      <div class="generic-card-content">
+        {% if options.schema %}
+          {% for item in options.schema %}
+            {% if item === 'title' %}
+              <div class="generic-card-title ts-px-half">
+                <span class="generic-card-title text-black medium-text">{{ piece.title }}</span>
+              </div>
+            {% elif item === 'startDate' or item === 'publishedAt' %}
+              <div class="text-black">{{ piece[item] | date('MMMM Do YYYY') }}</div>
+            {% elif item === 'description' %}
+              <div class="o-description">
+                <span class="description-text text-black small-text">{{ piece.description }}</span>
+              </div>
+            {% elif item === 'tags' and piece.tags.length > 0 %}
+              <ul class="o-tag-list">
+                {% for tag in piece.tags %}
+                  <li><a class="o-tag" href="{{ options.tagsUrl if options.tagsUrl }}?tags={{ tag }}">{{ tag }}</a></li>
+                {% endfor %}
+              </ul>
+            {% elif apos.helpers._isObject(item) %}
+              {% if piece[item.field] %}
+                <span class="o-card__info{% if item.class %} {{ item.class }}{% endif %}">{{ item.label if item.label }}{{ piece[item.field] }}</span>
+              {% endif %}
+            {% elif apos.helpers.isJoin(item) %}
+              <span class="o-card__info">{{ apos.helpers.typy(piece, item) }}</span>
+            {% else %}
+              <span class="o-card__info">{{ piece[item] }}</span>
             {% endif %}
-          {% elif apos.helpers.isJoin(item) %}
-            <span class="o-card__info">{{ apos.helpers.typy(piece, item) }}</span>
-          {% else %}
-            <span class="o-card__info">{{ piece[item] }}</span>
-          {% endif %}
-        {% endfor %}
-      {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
     </div>
-  </div>
+  </a>
 {% endmacro %}
 
 {% macro cards(arr, options) %}

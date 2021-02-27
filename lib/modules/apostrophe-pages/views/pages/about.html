@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}{{__('About')}}{% endblock %}
+
+{% block main %}
+  <div class="ts-container about flex flex-column align-center justify-center">
+    {{ apos.area(data.page, 'body', {
+      widgets: {
+        'apostrophe-rich-text': {
+          toolbar: [ 'Styles', 'Bold', 'Link' ],
+          styles: [
+            { name: 'Heading', element: 'h2'},
+            { name: 'Subheading', element: 'h3'},
+            {
+              element: 'p',
+              name: 'Paragraph',
+              attributes: { class: 'article-text text-black' }
+            },
+            {
+              element: 'strong',
+              name: 'Highlighted name',
+              attributes: { class: 'highlighted-name' }
+            }
+          ]
+        }
+      }
+    })
+  }}
+  </div>
+{% endblock %}

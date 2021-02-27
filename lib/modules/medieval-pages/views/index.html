@@ -2,7 +2,7 @@
 {% import 'macros/masthead.html' as masthead %}
 
 {% block main %}
-  {{ masthead.render(data.page, { class: 'ts-mb-0 ts-mt-4 ts-ml-1' }) }}
+  {{ masthead.render(data.page, { type: 'article', color: 'green' }) }}
   <div data-apos-ajax-context="blog" class="main-content">
     {% include "indexAjax.html" %}
   </div>

@@ -1,22 +1,25 @@
-{% macro render() %}
-
+{% macro render(el) %}
 {% set lang = '' %}
 {% set activeLocale = apos.workflow.lang() %}
-{% for l in apos.workflow.localizations() %}
-{% if l.workflowLocale === activeLocale %}
-  {% set lang = l.label %}
-{% endif %}
-{% endfor %}
-<button class="language-button" type="button" data-role="lang-toggle">
-  <span class="language-span">{{ lang }}</span>
-</button>
-<ul data-role="lang-list" class="language-list hidden">
-{% for locale in apos.workflow.localizations() %}
-  {% if locale.workflowLocale !== activeLocale %}
-    <li>
-      <a href="{{ locale._url | build({ workflowLocale: locale.workflowLocale }) }}" >{{ locale.label }}</a>
-    </li>
+{% set locales = apos.settings.getOption('locales') %}
+{% for l in locales %}
+  {% if l.name === activeLocale %}
+    {% set lang = l.label %}
   {% endif %}
 {% endfor %}
+<div class="language-button pointer flex align-center justify-between">
+  <div class="language">{{ lang }}</div>
+  <div class="arrow-wrapper down">
+    <i class="arrow down" id="arrow-icon"></i>
+  </div>
+</div>
+<ul class="language-list hidden" data-role="lang-list">
+  {% for locale in locales %}
+    {% if locale.name !== activeLocale %}
+      <li>
+        <a href="{{ apos.helpers.getURL(el._url, locale.name) }}" >{{ locale.label }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
 </ul>
 {% endmacro %}
