@@ -25,6 +25,9 @@ var apos = require('apostrophe')({
         _url:  `/modules/apostrophe-workflow/link-to-locale?slug=2%F&locale=${locale.value}`
       }))
     },
+    'apostrophe-assets': {
+      minify: (process.env.ENV === 'PROD')
+    },
     'apostrophe-i18n-static': {
       defaultLocale,
       locales,
