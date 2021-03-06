@@ -1,0 +1,15 @@
+{% import 'macros/generic-cards.html' as cards %}
+{% import 'apostrophe-pager:macros.html' as pager %}
+
+<div class="ts-container article-page">
+  {% if data.pieces.length %}
+    {{ cards.render(data.pieces, { schema: ['title', 'description', 'tags'] }) }}
+    <div class="c-pager">
+      {{ pager.render({ page: data.currentPage, total: data.totalPages }, data.url) }}
+    </div>
+  {% else %}
+    <div class="page-content body">
+      <span class="text-black">{{__('no_article')}}</span>
+    </div>
+  {% endif %}
+</div>

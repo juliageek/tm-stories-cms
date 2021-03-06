@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+{% import 'macros/masthead.html' as masthead %}
+
+{% block main %}
+  {{ masthead.render(data.page, { type: 'period-page', color: 'gold' }) }}
+  <div data-apos-ajax-context="blog" class="main-content">
+    {% include "indexAjax.html" %}
+  </div>
+{% endblock %}

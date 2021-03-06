@@ -1,10 +1,13 @@
 .menu {
-  height: 100vh;
+  height: 103vh;
   width: 100vw;
   overflow: hidden;
   display: grid;
   grid-template-columns: 1.5rem 400px 20% auto;
   grid-template-rows: 10% 50% auto 10%;
+  z-index: 460;
+  background-color: white;
+  margin-top: -3rem;
 }
 
 .utilities {
@@ -85,10 +88,15 @@
 @media (max-width: 768px) {
   .cjt {
     left: 2rem;
+    bottom: 2.8rem;
+  }
+
+  .cjt-text {
+    font-size: 0.8rem;
   }
 
   .utilities {
-    padding: 1rem 1rem 0 1rem;
+    padding: 1rem 1rem 0 0.5rem;
     flex-direction: row;
     justify-content: space-between;
 
@@ -111,7 +119,7 @@
   }
 
   .useful-links, .email, .language-select {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   .social-media-links {
@@ -124,12 +132,18 @@
 
   .menu {
     grid-template-columns: 1.5rem auto;
-    grid-template-rows: 5% 15% 1fr 1fr;
+    grid-template-rows: 10% 15% 1fr 1fr;
   }
 
   .periods-container {
     grid-row-start: 3;
     grid-column-start: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu {
+    height: 105vh;
   }
 }
 
@@ -140,7 +154,8 @@
 
   .menu {
     grid-template-columns: 0.5rem auto 0.5rem;
-    grid-template-rows: 5% 20% 55% auto;
+    grid-template-rows: 15% 15% 50% 5%;
+    height: 120vh;
   }
 
   .cjt {
@@ -148,7 +163,7 @@
   }
 
   .utilities {
-    justify-content: flex-start;
+    justify-content: center;
     flex-direction: column;
     padding: 0 1rem 0 0.75rem;
 
@@ -177,7 +192,7 @@
     padding-right: 1.1rem;
   }
 
-  .link, .email, .social-media-links, .language-select, .cjt-text {
+  .link, .email, .social-media-links, .language-select {
     font-size: 0.9rem;
   }
 }

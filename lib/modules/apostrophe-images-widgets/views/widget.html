@@ -21,9 +21,9 @@
         {%- block credit -%}
           {%- if image.credit -%}
             {%- if image.creditUrl -%}
-              <a href="{{ image.creditUrl }}">
+              <a class="text-small" href="{{ image.creditUrl }}">
             {%- endif -%}
-            {{ image.credit }}
+                <span class="text-small">{{ image.credit }}</span>
             {%- if image.creditUrl -%}
               </a>
             {%- endif -%}
@@ -31,7 +31,7 @@
           {%- endblock -%}
           {%- block description -%}
             {%- if image.description and data.widget._pieces.length == 1 -%}
-              <div>{{ image.description | nlbr }}</div>
+              <div class="text-small">{{ image.description | nlbr }}</div>
             {%- endif -%}
         {%- endblock -%}
       {%- endfor -%}
@@ -41,14 +41,14 @@
     {% if data.widget._pieces.length > 1 %}
       <div class="nav-arrow flex align-center justify-center" id="arrow-right">
         <a href="#" data-next class="apos-slideshow-button apos-slideshow-next">
-          <div class="icon-wrapper hidden flex align-center justify-center" id="icon-wrapper-right">
+          <div class="icon-wrapper flex align-center justify-center" id="icon-wrapper-right">
             <i class="fa fa-angle-right"></i>
           </div>
         </a>
       </div>
       <div class="nav-arrow flex align-center justify-center" id="arrow-left">
         <a href="#" data-previous class="apos-slideshow-button apos-slideshow-prev">
-          <div class="icon-wrapper hidden flex align-center justify-center" id="icon-wrapper-left">
+          <div class="icon-wrapper flex align-center justify-center" id="icon-wrapper-left">
             <i class="fa fa-angle-left"></i>
           </div>
         </a>

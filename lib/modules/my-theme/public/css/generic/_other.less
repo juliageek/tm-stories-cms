@@ -100,8 +100,13 @@ p {
 .ts-container {
   padding: 2.5rem 10%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  flex-direction: column;
+
+  &--centered {
+    align-items: center;
+  }
 }
 
 @media (max-width: 1280px) {
@@ -112,12 +117,12 @@ p {
 
 @media (max-width: 768px) {
    .ts-container {
-    padding: 1rem 2rem 0 2rem;
+    padding: 1rem 2rem;
   }
 }
 
 @media (max-width: 500px) {
   .ts-container {
-    padding: 1rem 1rem 0 1rem;
+    padding: 1rem;
   }
 }

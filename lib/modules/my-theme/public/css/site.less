@@ -12,6 +12,7 @@
 @import 'components/navigation.less';
 @import 'components/periods.less';
 @import 'components/photos.less';
+@import 'components/three-panel.less';
 @import 'components/two-panel.less';
 
 @import 'generic/_colors.less';
@@ -27,15 +28,16 @@
   bottom: 0 !important;
 }
 
-.apos-refreshable {
-    overflow-x: hidden;
-}
-
 body {
   margin: 0 !important;
   font-size: 16px;
   font-family: 'OpenSans-Regular', sans-serif;
   box-sizing: border-box;
+  overflow-x: hidden !important;
+}
+
+.apos-refreshable {
+  overflow: hidden !important;
 }
 
 .main-content {
@@ -46,37 +48,35 @@ body {
   background-color: white;
 }
 
-#page-menu {
-  top: -480px;
-  height: 105vh;
-  width: 100vw;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+#page-menu.hidden {
+  top: -1000px;
   left: 0;
-  transition-delay: 0.1s;
-  background-color: white;
-  transition: all 0.6s ease-in-out;
-  transform: scaleY(0) translateY(-480px);
   z-index: 460;
-  overflow: hidden;
+  transition: all 0.7s ease-in-out;
+  transform: translateY(-1000px);
+  opacity: 0;
 }
 
-#page-menu.open {
+#page-menu {
   height: 105vh;
-  width: 100vw;
   z-index: 460;
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: scaleY(1) translateY(0);
+  position: fixed;
   top: 0;
-  overflow: hidden;
+  overflow: hidden !important;
+  transition: all 0.7s ease-in-out;
+  opacity: 1;
 }
 
 .apos-area.apos-empty {
   background-color: transparent !important;
+}
+
+.apos-rich-text-widget.apos-empty {
+  background-color: transparent !important;
+  min-height: 50px !important;
 }
 
 body.scroll-disabled {
@@ -112,7 +112,6 @@ body.scroll-disabled {
 
 .apos-area .apos-slideshow-button {
   position: relative !important;
-  top: 0;
 
   i {
     top: 0 important;
@@ -121,55 +120,15 @@ body.scroll-disabled {
 }
 
 .apos-area .apos-slideshow-button.apos-slideshow-prev {
-  left: 0;
+  left: 0 !important;
 }
 
 .apos-area .apos-slideshow-button.apos-slideshow-next {
-  right: 0;
+  right: 0 !important;
 }
 
-.apos-slideshow.apos-slideshow-grid {
-  display: grid;
-  grid-template-columns: 50px auto 50px;
-  grid-template-rows: 100%;
-
-  #arrow-left {
-    grid-column-start: 1;
-    grid-row-start: 1;
-    z-index: 500;
-  }
-
-  .nav-arrow a {
-    height: 100%;
-    width: 100%;
-  }
-
-  .image-container {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 1;
-  }
-
-  .icon-wrapper {
-    height: inherit;
-    width: 100%;
-    background-color: white;
-    opacity: 0.7;
-  }
-
-  #arrow-right {
-    grid-column-start: 3;
-    grid-row-start: 1;
-    z-index: 500;
-  }
-
-  .apos-slideshow-button {
-    transform: translateY(0);
-  }
-
-  .apos-slideshow-item {
-    background-size: cover;
-  }
+.apos-manage-pager {
+  z-index: 100;
 }
 
 @media (max-width: 960px) {

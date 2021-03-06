@@ -1,12 +1,8 @@
 {% macro render(page) %}
-  <ul class="breadcrumbs-navigation flex">
-    {% for ancestor in page._ancestors %}
-      <li class="breadcrumbs-item">
-        <a class="breadcrumbs-link" href="{{ ancestor._url }}">{{ ancestor.title }}</a>  /
-      </li>
-    {% endfor %}
-    <li class="breadcrumbs-item">
-      <a class="breadcrumbs-link" href="{{ page._url }}">{{ page.title }}</a>
-    </li>
-  </ul>
+  <div class="breadcrumbs-navigation">
+    <a class="breadcrumbs-link" href="{{ page._url }}">
+      <i class="fa fa-arrow-left"></i>
+      <span>{{ __('back') }}</span>
+    </a>
+  </div>
 {% endmacro %}

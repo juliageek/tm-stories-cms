@@ -54,7 +54,7 @@
       <span class="logo">tmstories</span>
     </a>
   </div>
-  <div id="page-menu">
+  <div id="page-menu" class="hidden">
     {% if data.piece %}
       {{ navigation.render(data.home, data.piece)}}
     {% else %}
@@ -78,4 +78,7 @@
   {#
     This would be a great place to put a global footer.
   #}
+  <footer>
+    <script></script>
+  </footer>
 {% endblock %}

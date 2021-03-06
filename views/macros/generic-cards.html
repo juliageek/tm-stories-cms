@@ -18,7 +18,7 @@
               <div class="text-black">{{ piece[item] | date('MMMM Do YYYY') }}</div>
             {% elif item === 'description' %}
               <div class="o-description">
-                <span class="description-text text-black small-text">{{ piece.description }}</span>
+                <span class="description-text text-black text-small">{{ piece.description }}</span>
               </div>
             {% elif item === 'tags' and piece.tags.length > 0 %}
               <ul class="o-tag-list">

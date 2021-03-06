@@ -1,4 +1,5 @@
 var path = require('path');
+var expressCacheOnDemand = require('express-cache-on-demand')();
 
 const locales = [
   {
@@ -59,11 +60,19 @@ var apos = require('apostrophe')({
     'link-widgets': {},
     'page-link-widgets': {},
     'my-theme': {},
+    // Blog modules
     'antiquity': { extend: 'apostrophe-blog' },
     'antiquity-pages': { extend: 'apostrophe-pieces-pages' },
-    'antiquity-widgets': {},
+    'austrian': { extend: 'apostrophe-blog' },
+    'austrian-pages': { extend: 'apostrophe-pieces-pages' },
     'medieval': { extend: 'apostrophe-blog' },
     'medieval-pages': { extend: 'apostrophe-pieces-pages' },
+    'modern': { extend: 'apostrophe-blog' },
+    'modern-pages': { extend: 'apostrophe-pieces-pages' },
+    'otoman': { extend: 'apostrophe-blog' },
+    'otoman-pages': { extend: 'apostrophe-pieces-pages' },
+    'world-wars': { extend: 'apostrophe-blog' },
+    'world-wars-pages': { extend: 'apostrophe-pieces-pages' },
     // Content widgets
     'two-panel-widgets': {},
     'three-panel-widgets': {}

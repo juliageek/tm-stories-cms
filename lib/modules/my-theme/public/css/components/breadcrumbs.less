@@ -1,7 +1,29 @@
 .breadcrumbs-navigation {
   z-index: 10;
-  font-size: 2rem;
+  font-size: 1.4rem;
   letter-spacing: 2px;
   font-weight: 100;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: grey;
+}
+
+@media (max-width: 1280px) {
+  .breadcrumbs-navigation {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .breadcrumbs-navigation {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .breadcrumbs-navigation {
+    font-size: 1.1rem;
+  }
 }

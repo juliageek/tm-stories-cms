@@ -4,14 +4,15 @@
 {% endif %}
 
 {% set leftPanelSchema = apos.helpers._find(data.manager.schema, { name: 'leftPanel' }) %}
+{% set midPanelSchema = apos.helpers._find(data.manager.schema, { name: 'midPanel' }) %}
 {% set rightPanelSchema = apos.helpers._find(data.manager.schema, { name: 'rightPanel' }) %}
 
-<div class="three-panel-container {{ config }} ts-px-1">
+<div class="three-panel-container {{ config }}">
   <div class="three-panel__left flex flex-column justify-center">
     {{ apos.area(w, 'leftPanel', leftPanelSchema.options) }}
   </div>
   <div class="three-panel__mid flex flex-column justify-center">
-    {{ apos.area(w, 'midPanel', leftPanelSchema.options) }}
+    {{ apos.area(w, 'midPanel', midPanelSchema.options) }}
   </div>
   <div class="three-panel__right flex flex-column justify-center">
     {{ apos.area(w, 'rightPanel', rightPanelSchema.options) }}
