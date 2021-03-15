@@ -9,6 +9,10 @@ const locales = [
   {
     value: 'en',
     label: 'English (US)'
+  },
+  {
+    value: 'de',
+    label: 'Deutsch'
   }
 ]
 
@@ -44,7 +48,8 @@ var apos = require('apostrophe')({
       alias: 'workflow',
       prefixes: {
         'en': '/en',
-        'ro': '/ro'
+        'ro': '/ro',
+        'de': '/de'
       },
       locales: [{
         name: 'default',

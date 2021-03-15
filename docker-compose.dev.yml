@@ -9,10 +9,7 @@ services:
       - "3000:3000"
     volumes:
       - ./data/uploads:/app/public/uploads
-      - $PWD/lib:/app/lib
-      - $PWD/locales:/app/locales
-      - $PWD/public:/app/public
-      - $PWD/views:/app/views
+      - $PWD:/app
     environment:
       - APOS_MONGODB_URI=mongodb://mongo:27017/tm-stories-cms
     depends_on:
