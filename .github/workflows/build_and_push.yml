@@ -28,7 +28,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: juli4g33k/tm-stories-cms:${{ env.GITHUB_REF == 'refs/heads/master' && 'latest' || 'test' }}
+          tags: juli4g33k/tm-stories-cms:${{ github.ref == 'refs/heads/master' && 'latest' || 'test' }}
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
