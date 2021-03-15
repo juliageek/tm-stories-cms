@@ -1,7 +1,7 @@
 version: "3"
 services:
   apostrophe:
-    image: tm-stories-cms
+    image: juli4g33k/tm-stories-cms
     container_name: apostrophe
     restart: always
     build: .
