@@ -4,7 +4,7 @@
   "description": "Minimal Apostrophe Boilerplate",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "nodemon"
   },
   "repository": {
     "type": "git",
@@ -14,10 +14,10 @@
   "license": "MIT",
   "dependencies": {
     "animate.css": "^4.1.1",
-    "apostrophe": "^2.115.0",
+    "apostrophe": "^2.116.1",
     "apostrophe-blog": "^2.2.1",
     "apostrophe-i18n-static": "^1.2.2",
-    "apostrophe-workflow": "^2.38.2",
+    "apostrophe-workflow": "^2.38.3",
     "express-cache-on-demand": "^1.0.2",
     "hover.css": "^2.3.2",
     "imagemagick": "^0.1.3",

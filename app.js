@@ -21,12 +21,8 @@ var apos = require('apostrophe')({
       alias: 'settings',
       locales: locales.map(locale => ({
         label: locale.label,
-        name: locale.value,
-        _url:  `/modules/apostrophe-workflow/link-to-locale?slug=2%F&locale=${locale.value}`
+        name: locale.value
       }))
-    },
-    'apostrophe-assets': {
-      minify: (process.env.ENV === 'PROD')
     },
     'apostrophe-i18n-static': {
       defaultLocale,

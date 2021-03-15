@@ -1,7 +1,7 @@
 .periods-container {
   display: grid;
   grid-auto-rows: 1fr;
-  margin-top: 1.1rem;
+  margin-top: 2rem;
 }
 
 .period-card {
@@ -12,10 +12,10 @@
 
 .text-background {
   position: absolute;
-  width: 28%;
+  width: 29%;
   height: calc(98vh/6.6);
   transform: skew(-15deg);
-  margin-left: -24px;
+  margin-left: -32px;
   z-index: 30;
 }
 
@@ -25,7 +25,7 @@
   height: calc(98vh/6.5);
   background-color: white;
   transform: skew(-15deg);
-  margin-left: -24px;
+  margin-left: -32px;
   z-index: 10;
 }
 
@@ -196,6 +196,14 @@
 
 @media (max-width: 960px) {
   .period-card {
+    .text-background {
+      width: 38%;
+    }
+
+    .white-stripe {
+      width: 40%;
+    }
+
     .period-text {
       font-size: 1.2rem;
       width: 270px;
@@ -240,7 +248,7 @@
     }
 
     .white-stripe {
-      width: 67%;
+      width: 68%;
     }
 
     .period-text {
@@ -264,7 +272,7 @@
 
       .white-stripe {
         height: calc(60vh/6.5);
-        width: 68%;
+        width: 70%;
       }
 
       .period-text {
@@ -279,11 +287,11 @@
   .periods-container {
     .period-link .period-card {
       .text-background {
-        width: 86%;
+        width: 99%;
       }
 
       .white-stripe {
-        width: 90%;
+        display: none;
       }
 
       .period-text {
@@ -291,5 +299,9 @@
         width: 250px;
       }
     }
+  }
+
+  #period-1, #period-2, #period-3, #period-4, #period-5, #period-6 {
+    background: none;
   }
 }

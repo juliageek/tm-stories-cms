@@ -23,9 +23,12 @@
 @import 'generic/_typography.less';
 
 .apos-admin-bar {
-  top: 80vh !important;
-  left: 25px !important;
-  bottom: 0 !important;
+  top: 10vh !important;
+  left: 2rem !important;
+}
+
+.apos-ui .apos-dropdown {
+  z-index: 400 !important;
 }
 
 body {
@@ -114,7 +117,7 @@ body.scroll-disabled {
   position: relative !important;
 
   i {
-    top: 0 important;
+    top: 0 !important;
     color: @black;
   }
 }
@@ -130,6 +133,13 @@ body.scroll-disabled {
 .apos-manage-pager {
   z-index: 100;
 }
+
+@media only screen and (min-width: 1450px) {
+  .apos-ui .apos-admin-bar-inner {
+    max-width: 2200px !important;
+  }
+}
+
 
 @media (max-width: 960px) {
   a.login-link {

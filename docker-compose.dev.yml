@@ -1,0 +1,27 @@
+version: "3"
+services:
+  apostrophe:
+    image: tm-stories-cms
+    container_name: apostrophe
+    restart: always
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data/uploads:/app/public/uploads
+      - $PWD/lib:/app/lib
+      - $PWD/locales:/app/locales
+      - $PWD/public:/app/public
+      - $PWD/views:/app/views
+    environment:
+      - APOS_MONGODB_URI=mongodb://mongo:27017/tm-stories-cms
+    depends_on:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo:3.6.3
+    restart: always
+    volumes:
+      - ./data/db:/data/db
+    ports:
+      - '27017-27019:27017-27019'
