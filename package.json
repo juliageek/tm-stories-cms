@@ -4,7 +4,7 @@
   "description": "Minimal Apostrophe Boilerplate",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
